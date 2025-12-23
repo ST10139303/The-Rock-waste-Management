@@ -1,0 +1,531 @@
+﻿@model List<dynamic>
+@{
+    ViewData["Title"] = "Customer Bookings";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    :root {
+        --primary: #2c786c;
+        --secondary: #ff9800;
+        --success: #28a745;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --info: #17a2b8;
+        --light: #f8f9fa;
+        --dark: #343a40;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+
+    .dashboard-header {
+        background: linear-gradient(135deg, var(--primary), #004445);
+        color: white;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(44, 120, 108, 0.15);
+    }
+
+    .booking-card {
+        background: white;
+        border-radius: 16px;
+        border: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.03);
+    }
+
+        .booking-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+    .booking-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.25rem;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .booking-body {
+        padding: 1.25rem;
+    }
+
+    .booking-footer {
+        background: var(--light);
+        padding: 1rem 1.25rem;
+        border-radius: 0 0 16px 16px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .service-badge {
+        font-size: 0.7rem;
+        padding: 0.4em 0.8em;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+
+    .status-badge {
+        font-size: 0.65rem;
+        padding: 0.35em 0.7em;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+
+        .info-item i {
+            width: 16px;
+            margin-right: 0.5rem;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+    .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-action {
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+        border: none;
+        transition: all 0.2s ease;
+    }
+
+        .btn-action:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+    .empty-state {
+        text-align: center;
+        padding: 3rem 2rem;
+        color: #64748b;
+    }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #cbd5e1;
+        }
+
+    .price-input-form {
+        background: #f8fafc;
+        padding: 0.75rem;
+        border-radius: 10px;
+        margin-top: 0.75rem;
+        border: 1px solid #e2e8f0;
+    }
+
+    .special-request-badge {
+        background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+        color: white;
+        padding: 0.2rem 0.6rem;
+        border-radius: 10px;
+        font-size: 0.65rem;
+        font-weight: 600;
+    }
+
+    .booking-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .price-input-group {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .price-input {
+        flex: 1;
+        min-width: 80px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+    }
+
+        .price-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(44, 120, 108, 0.1);
+        }
+
+    .price-display {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin: 0.25rem 0;
+    }
+
+    .customer-name {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .booking-date {
+        font-size: 0.8rem;
+        opacity: 0.9;
+    }
+
+    .container-wide {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .price-section {
+        background: #f8fafc;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        border: 1px solid #e2e8f0;
+    }
+
+    .dropdown-menu {
+        border-radius: 10px;
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        margin: 0.1rem;
+        font-size: 0.8rem;
+        transition: all 0.2s ease;
+    }
+
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, var(--primary), #004445);
+            color: white;
+        }
+</style>
+
+<div class="container-wide">
+    <!-- Header Section -->
+    <div class="dashboard-header">
+        <h1 class="h3 fw-bold mb-2">
+            <i class="bi bi-calendar-check-fill me-2"></i>Customer Bookings
+        </h1>
+        <p class="mb-0 opacity-90 small">Manage all cleaning service requests</p>
+    </div>
+
+    <!-- Success/Error Messages -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert" style="border-radius: 10px; border: none; font-size: 0.85rem;">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <div class="flex-grow-1">@TempData["Success"]</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert" style="border-radius: 10px; border: none; font-size: 0.85rem;">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <div class="flex-grow-1">@TempData["Error"]</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <!-- Bookings Grid -->
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="empty-state">
+            <i class="bi bi-inbox"></i>
+            <h5 class="fw-bold mb-2">No Bookings Found</h5>
+            <p class="text-muted small">When customers book services, they'll appear here.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-md-6 col-xl-4 mb-3">
+                    <div class="booking-card">
+                        <!-- Booking Header -->
+                        <div class="booking-header">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <div class="customer-name">@item.CustomerName</div>
+                                    <div class="booking-date">
+                                        <i class="bi bi-calendar me-1"></i>
+                                        @(item.Date is DateTime date ? date.ToString("MMM dd, yyyy") : "Date not set")
+                                    </div>
+                                </div>
+                                <span class="service-badge @GetServiceBadgeClass(item.ServiceType)">
+                                    @Html.Raw(GetServiceIcon(item.ServiceType)) @GetServiceDisplayName(item.ServiceType)
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Booking Body -->
+                        <div class="booking-body">
+                            <!-- Address -->
+                            <div class="info-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span class="text-truncate">@item.Address</span>
+                            </div>
+
+                            <!-- Time Slot -->
+                            <div class="info-item">
+                                <i class="bi bi-clock"></i>
+                                <span>@item.TimeSlot</span>
+                            </div>
+
+                            <!-- Special Request -->
+                            @if (!string.IsNullOrEmpty(item.SpecialRequest))
+                            {
+                                <div class="info-item">
+                                    <i class="bi bi-chat-text"></i>
+                                    <span class="special-request-badge">Special Request</span>
+                                </div>
+                            }
+
+                            <!-- Price Section -->
+                            <div class="price-section">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="text-muted small">Estimated</div>
+                                        <div class="price-display text-primary">R@(item.EstimatedPrice?.ToString("F2") ?? "0.00")</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-muted small">Final Price</div>
+                                        @if (item.IsPriceSet == true)
+                                        {
+                                            <div class="price-display text-success">R@(item.FinalPrice?.ToString("F2") ?? "0.00")</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="text-warning small fw-bold">Not Set</div>
+                                        }
+                                    </div>
+                                </div>
+
+                                <!-- Set Price Form -->
+                                @if (item.IsPriceSet != true && item.Status?.ToString().ToLower() == "approved")
+                                {
+                                    <div class="price-input-form">
+                                        <form asp-action="SetBookingPrice" asp-controller="Admin" method="post" class="price-input-group">
+                                            <input type="hidden" name="bookingId" value="@item.BookingId" />
+                                            <input type="number" name="finalPrice" class="form-control price-input"
+                                                   step="0.01" placeholder="Enter price" required
+                                                   value="@(item.EstimatedPrice?.ToString("F0") ?? "")" />
+                                            <button type="submit" class="btn btn-success btn-sm">
+                                                <i class="bi bi-check"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <!-- Booking Footer -->
+                        <div class="booking-footer">
+                            <div class="booking-meta">
+                                <div class="d-flex flex-wrap gap-1">
+                                    <span class="status-badge @GetStatusBadgeClass(item.Status)">
+                                        @Html.Raw(GetStatusIcon(item.Status)) @item.Status?.ToString().ToUpper()
+                                    </span>
+                                    <span class="status-badge @GetPaymentBadgeClass(item.PaymentStatus)">
+                                        @item.PaymentStatus?.ToString().ToUpper()
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="action-buttons">
+                                @if (item.Status?.ToString().ToLower() == "pending")
+                                {
+                                    <form asp-action="UpdateBookingStatus" asp-controller="Admin" method="post" class="d-inline">
+                                        <input type="hidden" name="bookingId" value="@item.BookingId" />
+                                        <input type="hidden" name="newStatus" value="approved" />
+                                        <button type="submit" class="btn btn-success btn-action">
+                                            <i class="bi bi-check"></i>
+                                        </button>
+                                    </form>
+                                    <form asp-action="UpdateBookingStatus" asp-controller="Admin" method="post" class="d-inline">
+                                        <input type="hidden" name="bookingId" value="@item.BookingId" />
+                                        <input type="hidden" name="newStatus" value="rejected" />
+                                        <button type="submit" class="btn btn-danger btn-action">
+                                            <i class="bi bi-x"></i>
+                                        </button>
+                                    </form>
+                                }
+                                else if (item.Status?.ToString().ToLower() == "approved" && item.IsPriceSet == true)
+                                {
+                                    <button class="btn btn-info btn-action"
+                                            onclick="alert('Payment ready: R@(item.FinalPrice?.ToString("F2") ?? "0.00")')">
+                                        <i class="bi bi-credit-card"></i>
+                                    </button>
+                                }
+
+                                <!-- Actions Dropdown -->
+                                <div class="dropdown d-inline">
+                                    <button class="btn btn-outline-primary btn-action dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#" onclick="showBookingDetails('@item.BookingId')">
+                                                <i class="bi bi-eye me-2"></i>Details
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" onclick="contactCustomer('@item.CustomerName')">
+                                                <i class="bi bi-telephone me-2"></i>Contact
+                                            </a>
+                                        </li>
+                                        @if (item.Status?.ToString().ToLower() != "cancelled" && item.Status?.ToString().ToLower() != "rejected")
+                                        {
+                                            <li>
+                                                <form asp-action="UpdateBookingStatus" asp-controller="Admin" method="post" class="d-inline">
+                                                    <input type="hidden" name="bookingId" value="@item.BookingId" />
+                                                    <input type="hidden" name="newStatus" value="cancelled" />
+                                                    <button type="submit" class="dropdown-item text-danger"
+                                                            onclick="return confirm('Cancel this booking?')">
+                                                        <i class="bi bi-x-circle me-2"></i>Cancel
+                                                    </button>
+                                                </form>
+                                            </li>
+                                        }
+                                        <li>
+                                            <form asp-action="DeleteBooking" asp-controller="Admin" method="post" class="d-inline"
+                                                  onsubmit="return confirm('Delete this booking?');">
+                                                <input type="hidden" name="bookingId" value="@item.BookingId" />
+                                                <button type="submit" class="dropdown-item text-danger">
+                                                    <i class="bi bi-trash me-2"></i>Delete
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function showBookingDetails(bookingId) {
+            alert('Booking details for ID: ' + bookingId);
+        }
+
+        function contactCustomer(customerName) {
+            alert('Contact: ' + customerName);
+        }
+
+        // Auto-dismiss alerts
+        setTimeout(() => {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                const bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            });
+        }, 5000);
+    </script>
+}
+
+@functions {
+    public string GetServiceBadgeClass(string serviceType)
+    {
+        return serviceType?.ToLower() switch
+        {
+            "dustbin" => "bg-warning text-dark",
+            "carpet" => "bg-info text-white",
+            "special" => "bg-purple text-white",
+            _ => "bg-secondary text-white"
+        };
+    }
+
+    public string GetServiceIcon(string serviceType)
+    {
+        return serviceType?.ToLower() switch
+        {
+            "dustbin" => "<i class='bi bi-trash'></i>",
+            "carpet" => "<i class='bi bi-grid-3x3-gap'></i>",
+            "special" => "<i class='bi bi-star'></i>",
+            _ => "<i class='bi bi-question-circle'></i>"
+        };
+    }
+
+    public string GetServiceDisplayName(string serviceType)
+    {
+        if (string.IsNullOrEmpty(serviceType))
+            return "Unknown Service";
+
+        return serviceType.ToLower() switch
+        {
+            "dustbin" => "Dustbin",
+            "carpet" => "Carpet",
+            "special" => "Special",
+            _ => "General Service"
+        };
+    }
+
+    public string GetPaymentBadgeClass(string paymentStatus)
+    {
+        return paymentStatus?.ToLower() switch
+        {
+            "paid" => "bg-success text-white",
+            "pending" => "bg-warning text-dark",
+            "failed" => "bg-danger text-white",
+            _ => "bg-secondary text-white"
+        };
+    }
+
+    public string GetStatusBadgeClass(string status)
+    {
+        return status?.ToLower() switch
+        {
+            "approved" => "bg-success text-white",
+            "rejected" => "bg-danger text-white",
+            "pending" => "bg-warning text-dark",
+            "cancelled" => "bg-secondary text-white",
+            _ => "bg-light text-dark"
+        };
+    }
+
+    public string GetStatusIcon(string status)
+    {
+        return status?.ToLower() switch
+        {
+            "approved" => "<i class='bi bi-check-circle'></i>",
+            "rejected" => "<i class='bi bi-x-circle'></i>",
+            "pending" => "<i class='bi bi-hourglass'></i>",
+            "cancelled" => "<i class='bi bi-slash-circle'></i>",
+            _ => "<i class='bi bi-info-circle'></i>"
+        };
+    }
+}

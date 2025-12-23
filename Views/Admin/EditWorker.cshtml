@@ -1,0 +1,210 @@
+﻿@model WorkerModel
+@{
+    ViewData["Title"] = Model.Id == null ? "Add Worker" : "Edit Worker";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - The Rock Waste Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c786c;
+            --secondary: #ff9800;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, var(--primary), #004445);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .form-body {
+            padding: 40px;
+        }
+
+        .form-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: var(--primary);
+                box-shadow: 0 0 0 0.25rem rgba(44, 120, 108, 0.25);
+            }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #004445);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(44, 120, 108, 0.4);
+            }
+
+        .input-group-text {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .back-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            .back-btn:hover {
+                color: #004445;
+            }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <div class="form-icon">
+                <i class="fas fa-user-edit"></i>
+            </div>
+            <h2 class="mb-2">@ViewData["Title"]</h2>
+            <p class="mb-0">@(Model.Id == null ? "Register a new worker" : "Update worker information")</p>
+        </div>
+
+        <div class="form-body">
+            <!-- Success/Error Messages -->
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>@TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>@TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <!-- Display Model Errors -->
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <h6>Please fix the following errors:</h6>
+                    <ul class="mb-0">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@error.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            <form method="post">
+                @Html.AntiForgeryToken()
+
+                <!-- Hidden field for Id -->
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Full Name *</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <input type="text" class="form-control" asp-for="Name" placeholder="Enter worker's full name" required>
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Phone Number *</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        <input type="tel" class="form-control" asp-for="Phone" placeholder="+27XXXXXXXXX" required
+                               pattern="^\+[1-9]\d{1,14}$"
+                               title="Please enter a valid phone number with country code (e.g., +27123456789)">
+                    </div>
+                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                    <small class="form-text text-muted">Include country code (e.g., +27 for South Africa)</small>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Email Address *</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" class="form-control" asp-for="Email" placeholder="worker@example.com" required>
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-save me-2"></i>Save Worker
+                    </button>
+                    <a href="/Admin/ViewWorkers" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Workers
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery Validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-focus on name field
+            document.querySelector('input[asp-for="Name"]').focus();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FirebaseAdmin" Version="3.3.0" />
+		<PackageReference Include="Google.Cloud.Firestore" Version="3.10.0" />
+		<PackageReference Include="Google.Cloud.Storage.V1" Version="4.13.0" />
+		<PackageReference Include="MailKit" Version="4.12.1" />
+	</ItemGroup>
+
+	<!-- 👇 Add this block to clear duplicate SourceRoot paths -->
+	<PropertyGroup>
+		<SourceRoot></SourceRoot>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<SourceRoot Remove="@(SourceRoot)" />
+	</ItemGroup>
+
+</Project>

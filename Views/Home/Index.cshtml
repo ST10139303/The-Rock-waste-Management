@@ -1,0 +1,223 @@
+﻿@{
+    ViewData["Title"] = "The Rock Waste Management - Kasi Cleaning Heroes";
+}
+
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6 text-center text-md-start">
+            <h1 class="display-4 fw-bold text-primary">Keeping Kasi Clean, One Bin at a Time 🧼</h1>
+            <p class="lead mt-3 text-dark">
+                The Rock Waste Management is a proudly Kasi-born company specializing in dustbin and carpet cleaning services. We serve homes and businesses with reliable, eco-friendly, and affordable solutions. Book online, pay securely, and keep your environment fresh!
+            </p>
+            <div class="mt-4">
+                @if (ViewBag.IsLoggedIn != true)
+                {
+                    <a class="btn btn-outline-dark btn-lg me-3" href="/Auth/Login">🔐 Login</a>
+                    <a class="btn btn-primary btn-lg" href="/Auth/Register">📝 Register</a>
+                }
+                else if (ViewBag.Role == "customer")
+                {
+                    <a class="btn btn-success btn-lg me-3" href="/Customer/BookCleaning">🧽 Book a Cleaning</a>
+                    <a class="btn btn-outline-secondary btn-lg" href="/Customer/BookingHistory">📋 View Bookings</a>
+                }
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="~/images/istockphoto-1138416478-612x612.jpg" alt="Kasi Cleaning" class="img-fluid" style="max-height: 400px;" />
+        </div>
+    </div>
+
+    <!-- Services Overview -->
+    <hr class="my-5" />
+    <h2 class="text-center mb-4 text-secondary">✨ Our Kasi Cleaning Services</h2>
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">🗑️ Dustbin Cleaning</h5>
+                    <p class="card-text">Thorough disinfecting and deodorizing of your bins — no more flies or smells.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body">
+                    <h5 class="card-title">🧼 Carpet Cleaning</h5>
+                    <p class="card-text">Deep-cleaning for carpets, mats, and rugs — even at your kasi doorstep.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body">
+                    <h5 class="card-title">🧹 Special Requests</h5>
+                    <p class="card-text">Need something extra? We also offer flexible cleaning solutions on demand.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What Our Customers Say -->
+    <div class="row my-5">
+        <div class="col-md-12">
+            <h2 class="text-center mb-4 text-secondary">💬 What Our Kasi Customers Say</h2>
+            <p class="text-center text-muted mb-4">Hear from our satisfied community members</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="text-muted mb-3">
+                            "The Rock Waste Management has transformed my spaza shop! My bins used to attract flies and create bad odors that drove customers away. Now everything is fresh and clean. Highly recommended!"
+                        </div>
+                        <div class="fw-bold text-primary">
+                            Local Spaza Owner
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="text-muted mb-3">
+                            "As a Tshiawelo resident, I appreciate having a reliable local cleaning service. The carpet cleaning revived my living room rug that I thought was beyond saving. Quick, affordable, and professional!"
+                        </div>
+                        <div class="fw-bold text-primary">
+                            Tshiawelo Resident
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="text-muted mb-3">
+                            "Running a salon means dealing with lots of hair and product residue. The Rock Waste Management keeps my bins fresh and my space welcoming. They understand the needs of kasi businesses!"
+                        </div>
+                        <div class="fw-bold text-primary">
+                            Kasi Salon Owner
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact/Enquiry Form -->
+    <div class="row my-5">
+        <div class="col-md-12">
+            <h2 class="text-center mb-4 text-secondary">📩 Send Us an Enquiry</h2>
+            <p class="text-center text-muted mb-4">Have questions or special requests? Fill out the form below and we'll get back to you shortly.</p>
+        </div>
+
+        <form asp-action="SendEnquiry" method="post" class="row g-3 border p-4 shadow-sm rounded">
+            <div class="col-md-6">
+                <label for="Name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" required>
+            </div>
+            <div class="col-md-6">
+                <label for="Email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="Email" name="Email" required>
+            </div>
+            <div class="col-12">
+                <label for="Message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="Message" name="Message" rows="4" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary px-4">Send Enquiry</button>
+            </div>
+        </form>
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success text-center mt-3">
+                @TempData["Success"]
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="fw-bold mb-3">The Rock Waste Management</h5>
+                <p class="mb-3">Kasi-born cleaning services dedicated to keeping our community fresh and healthy.</p>
+                <div class="d-flex">
+                    <a href="#" class="text-white me-3">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white me-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="/" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li class="mb-2"><a href="/Auth/Login" class="text-white-50 text-decoration-none">Login</a></li>
+                    <li class="mb-2"><a href="/Auth/Register" class="text-white-50 text-decoration-none">Register</a></li>
+                    <li class="mb-2"><a href="/Customer/BookCleaning" class="text-white-50 text-decoration-none">Book a Cleaning</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="mb-3">Contact Us</h5>
+                <address class="mb-3">
+                    <strong>The Rock Waste Management</strong><br>
+                    934 Nemakhayane Street<br>
+                    Tshiawelo, Soweto<br>
+                    Gauteng, 1818
+                </address>
+                <p class="mb-1">
+                    <i class="fas fa-phone me-2"></i>
+                    <a href="tel:+27123456789" class="text-white-50 text-decoration-none">+27 12 345 6789</a>
+                </p>
+                <p class="mb-0">
+                    <i class="fas fa-envelope me-2"></i>
+                    <a href="mailto:info@rockwastemanagement.co.za" class="text-white-50 text-decoration-none">info@rockwastemanagement.co.za</a>
+                </p>
+            </div>
+        </div>
+        <hr class="my-4 bg-secondary">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="mb-0 text-white-50">&copy; 2023 The Rock Waste Management. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-warning">Proudly Kasi Owned and Operated</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    /* Custom hover effects for cards */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+        }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Footer link hover effects */
+    footer a:hover {
+        color: #ffffff !important;
+        transition: color 0.3s ease;
+    }
+</style>

@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The Rock Waste Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #2c786c;
+            --secondary: #ff9800;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --gradient-start: #2c786c;
+            --gradient-end: #004445;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 70px; /* Added padding to account for fixed navbar */
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+            .navbar-nav .nav-link:hover {
+                background-color: rgba(44, 120, 108, 0.1);
+                color: var(--primary);
+            }
+
+            .navbar-nav .nav-link.active {
+                background-color: var(--primary);
+                color: white;
+            }
+
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .login-left {
+            background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 40px;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-right {
+            padding: 50px;
+        }
+
+        .welcome-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .form-floating {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-control {
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+            height: auto;
+        }
+
+            .form-control:focus {
+                border-color: var(--primary);
+                box-shadow: 0 0 0 0.25rem rgba(44, 120, 108, 0.25);
+            }
+
+        .form-label {
+            color: #495057;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            z-index: 5;
+        }
+
+        .btn-login {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(44, 120, 108, 0.3);
+            color: white;
+        }
+
+            .btn-login:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 7px 20px rgba(44, 120, 108, 0.4);
+                color: white;
+            }
+
+        .forgot-link {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+            .forgot-link:hover {
+                color: var(--gradient-end);
+                text-decoration: underline;
+            }
+
+        .login-message {
+            min-height: 24px;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+            .feature-list li {
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                font-size: 1rem;
+            }
+
+            .feature-list i {
+                background: rgba(255, 255, 255, 0.2);
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 12px;
+                font-size: 14px;
+            }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+
+            .divider::before, .divider::after {
+                content: "";
+                flex: 1;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            .divider span {
+                padding: 0 15px;
+                color: #6c757d;
+                font-size: 0.9rem;
+            }
+
+        @@media (max-width: 768px) {
+            .login-left
+
+        {
+            padding: 40px 20px;
+        }
+
+        .login-right {
+            padding: 40px 20px;
+        }
+
+        .welcome-text {
+            font-size: 1.8rem;
+        }
+
+        body {
+            padding-top: 60px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-recycle me-2"></i>The Rock Waste Management
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Worker/Login"><i class="fas fa-hard-hat me-1"></i> Worker Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="login-container">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <div class="login-left">
+                        <div class="logo">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h2>Welcome to The Rock Waste Management</h2>
+                        <p>Efficient solutions for a cleaner environment</p>
+
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Schedule pickups online</li>
+                            <li><i class="fas fa-check"></i> Get your dustbin and carpet cleaned</li>
+                            <li><i class="fas fa-check"></i> Fast</li>
+                            <li><i class="fas fa-check"></i> 24/7 Customer support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="login-right">
+                        <h1 class="welcome-text">Welcome Back</h1>
+                        <p class="subtitle">Sign in to access your account</p>
+
+                        <form id="loginForm">
+                            <div class="form-floating">
+                                <input id="loginEmail" type="email" class="form-control" placeholder="name@example.com" required />
+                                <label for="loginEmail"><i class="fas fa-envelope me-2"></i>Email address</label>
+                                <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                            </div>
+
+                            <div class="form-floating">
+                                <input id="loginPassword" type="password" class="form-control" placeholder="Password" required />
+                                <label for="loginPassword"><i class="fas fa-lock me-2"></i>Password</label>
+                                <span class="input-icon"><i class="fas fa-lock"></i></span>
+                            </div>
+
+                            <button type="button" id="loginBtn" class="btn btn-login w-100 py-3 mb-3">
+                                <span id="loginText">Login to your account</span>
+                                <div id="loginSpinner" class="spinner-border spinner-border-sm text-light" role="status" style="display: none;">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+
+                            <p id="loginMessage" class="login-message text-center"></p>
+
+                            <div class="text-center mt-4">
+                                <a href="#" id="forgotLink" class="forgot-link">Forgot password?</a>
+                            </div>
+
+                            <div class="divider">
+                                <span>New to our platform?</span>
+                            </div>
+
+                            <div class="text-center">
+                                <a href="/Auth/Register" class="btn btn-outline-primary w-100">Create an account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword,
+            sendPasswordResetEmail,
+            sendEmailVerification
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import {
+            getFirestore,
+            doc,
+            getDoc
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // ——— Your Firebase config ———
+        const firebaseConfig = {
+            apiKey: "AIzaSyDlGF6Qp1-wsOabSMkDy-feJV3WtVtyROY",
+            authDomain: "therockwastemanagement.firebaseapp.com",
+            projectId: "therockwastemanagement",
+            storageBucket: "therockwastemanagement.appspot.com",
+            messagingSenderId: "612370591242",
+            appId: "1:612370591242:web:65d742fb6dc4c2ab5139f3"
+        };
+
+        // Initialize
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const loginBtn = document.getElementById("loginBtn");
+        const loginText = document.getElementById("loginText");
+        const loginSpinner = document.getElementById("loginSpinner");
+        const forgotLink = document.getElementById("forgotLink");
+        const loginMessage = document.getElementById("loginMessage");
+
+        // Forgot password
+        forgotLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("loginEmail").value;
+
+            if (!email) {
+                alert("Please enter your email address first");
+                return;
+            }
+
+            sendPasswordResetEmail(auth, email)
+                .then(() => alert("Password reset email sent! Check your inbox."))
+                .catch(err => {
+                    alert("Error: " + err.message);
+                });
+        });
+
+        // Login flow
+        loginBtn.addEventListener("click", async () => {
+            loginMessage.textContent = "";
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+
+            // Basic validation
+            if (!email || !password) {
+                loginMessage.textContent = "Please fill in all fields";
+                loginMessage.classList.add("text-danger");
+                return;
+            }
+
+            // Show loading state
+            loginText.textContent = "Logging in...";
+            loginSpinner.style.display = "inline-block";
+            loginBtn.disabled = true;
+
+            try {
+                const { user } = await signInWithEmailAndPassword(auth, email, password);
+
+                // Check if email is verified
+                if (!user.emailVerified) {
+                    // Show email verification warning but allow login
+                    loginMessage.innerHTML = `
+                        <div class="alert alert-warning">
+                            <strong>Email not verified!</strong><br>
+                            Please verify your email address to access all features.
+                            <button type="button" class="btn btn-sm btn-outline-warning ms-2" id="resendVerification">
+                                Resend Verification Email
+                            </button>
+                        </div>
+                    `;
+
+                    // Add event listener for resend verification button
+                    setTimeout(() => {
+                        const resendBtn = document.getElementById('resendVerification');
+                        if (resendBtn) {
+                            resendBtn.addEventListener('click', async () => {
+                                try {
+                                    await sendEmailVerification(user);
+                                    alert('Verification email sent! Please check your inbox.');
+                                } catch (error) {
+                                    alert('Error sending verification email: ' + error.message);
+                                }
+                            });
+                        }
+                    }, 100);
+                }
+
+                // Check Firestore for role & status
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                if (!userDoc.exists()) {
+                    throw new Error("User record not found in our system.");
+                }
+
+                const data = userDoc.data();
+
+                // Check if account is disabled
+                if (data.status === "disabled") {
+                    throw new Error("Your account has been disabled. Contact support.");
+                }
+
+                // Check email verification in Firestore (additional check)
+                if (data.emailVerified === false) {
+                    loginMessage.innerHTML += `
+                        <div class="alert alert-info mt-2">
+                            <small>Please check your email and click the verification link to complete your registration.</small>
+                        </div>
+                    `;
+                }
+
+                // Store session (backend)
+                const res = await fetch("/Auth/StoreSession", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        uid: user.uid,
+                        role: data.role || "customer",
+                        email: user.email
+                    })
+                });
+
+                if (!res.ok) {
+                    const errorData = await res.json();
+                    throw new Error(errorData.message || "Session store failed.");
+                }
+
+                const sessionResult = await res.json();
+
+                // Show success message
+                if (!user.emailVerified) {
+                    loginMessage.innerHTML += `
+                        <div class="alert alert-success mt-2">
+                            Login successful! You can access your account, but please verify your email.
+                        </div>
+                    `;
+                } else {
+                    loginMessage.innerHTML = `
+                        <div class="alert alert-success">
+                            Login successful! Redirecting...
+                        </div>
+                    `;
+                }
+
+                // Redirect based on role (even if email not verified)
+                setTimeout(() => {
+                    if (data.role === "admin") {
+                        window.location.href = "/Admin/Dashboard";
+                    } else if (data.role === "worker") {
+                        window.location.href = "/Worker/Dashboard";
+                    } else {
+                        window.location.href = "/Customer/Dashboard";
+                    }
+                }, user.emailVerified ? 1000 : 3000); // Longer delay if email not verified
+
+            } catch (err) {
+                // Reset button state
+                loginText.textContent = "Login to your account";
+                loginSpinner.style.display = "none";
+                loginBtn.disabled = false;
+
+                // Friendly error handling
+                loginMessage.classList.add("text-danger");
+
+                if (err.code === "auth/too-many-requests") {
+                    loginMessage.textContent = "Too many login attempts. Please wait a few minutes or reset your password.";
+                } else if (err.code === "auth/invalid-credential") {
+                    loginMessage.textContent = "Invalid email or password. Please try again.";
+                } else if (err.code === "auth/user-not-found") {
+                    loginMessage.textContent = "No account found with this email. Please register first.";
+                } else if (err.code === "auth/wrong-password") {
+                    loginMessage.textContent = "Incorrect password. Please try again or reset your password.";
+                } else if (err.code === "auth/network-request-failed") {
+                    loginMessage.textContent = "Network error. Please check your internet connection.";
+                } else {
+                    loginMessage.textContent = err.message || "Login failed. Please try again.";
+                }
+            }
+        });
+
+        // Allow form submission with Enter key
+        document.getElementById("loginForm").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                loginBtn.click();
+            }
+        });
+
+        // Auto-focus on email field
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loginEmail').focus();
+        });
+    </script>
+
+    <!-- Bootstrap JS for navbar toggler -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

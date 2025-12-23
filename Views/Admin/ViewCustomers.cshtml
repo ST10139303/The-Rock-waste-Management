@@ -1,0 +1,177 @@
+﻿@model List<Dictionary<string, object>>
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-people-fill me-2"></i>User Management
+            </h2>
+            <p class="text-muted mb-0">Manage customers, admins, and workers.</p>
+        </div>
+    </div>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info text-center">
+            <i class="bi bi-info-circle"></i> No users found.
+        </div>
+    }
+    else
+    {
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Role</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var user in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @if (user.ContainsKey("name"))
+                                        {
+                                            @user["name"]
+                                        }
+                                        else if (user.ContainsKey("Name"))
+                                        {
+                                            @user["Name"]
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">Unknown</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (user.ContainsKey("email"))
+                                        {
+                                            @user["email"]
+                                        }
+                                        else if (user.ContainsKey("Email"))
+                                        {
+                                            @user["Email"]
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">Not provided</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (user.ContainsKey("phone"))
+                                        {
+                                            @user["phone"]
+                                        }
+                                        else if (user.ContainsKey("Phone"))
+                                        {
+                                            @user["Phone"]
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">Not provided</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (user.ContainsKey("DisplayRole"))
+                                        {
+                                            <span class="badge bg-primary">@user["DisplayRole"]</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">UNKNOWN</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (user.ContainsKey("UserType"))
+                                        {
+                                            <span class="badge bg-info">@user["UserType"]</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">UNKNOWN</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (user.ContainsKey("status"))
+                                        {
+                                            if (user["status"]?.ToString() == "disabled")
+                                            {
+                                                <span class="badge bg-danger">Disabled</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-success">Active</span>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success">Active</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm">
+                                            @if (user.ContainsKey("UserType") && user["UserType"]?.ToString() == "User")
+                                            {
+                                                @if (user.ContainsKey("status") && user["status"]?.ToString() == "disabled")
+                                                {
+                                                    <form asp-action="EnableUser" method="post" class="d-inline">
+                                                        <input type="hidden" name="userId" value="@user["Id"]" />
+                                                        <button type="submit" class="btn btn-success btn-sm">
+                                                            <i class="bi bi-check-circle"></i> Enable
+                                                        </button>
+                                                    </form>
+                                                }
+                                                else
+                                                {
+                                                    <form asp-action="DisableUser" method="post" class="d-inline">
+                                                        <input type="hidden" name="userId" value="@user["Id"]" />
+                                                        <button type="submit" class="btn btn-warning btn-sm">
+                                                            <i class="bi bi-slash-circle"></i> Disable
+                                                        </button>
+                                                    </form>
+                                                }
+                                                <form asp-action="DeleteUser" method="post" class="d-inline"
+                                                      onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                                    <input type="hidden" name="userId" value="@user["Id"]" />
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-muted">No actions</span>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Auto-dismiss alerts after 5 seconds
+        setTimeout(function () {
+            $('.alert').alert('close');
+        }, 5000);
+    </script>
+}
+
+

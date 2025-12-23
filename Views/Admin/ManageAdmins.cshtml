@@ -1,0 +1,402 @@
+﻿@model TheRockWasteManagement.Models.AdminManagementViewModel
+@{
+    ViewData["Title"] = "Manage Admins";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Management - The Rock Waste Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top-nav {
+            background: var(--primary);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .main-content {
+            padding: 30px 0;
+            min-height: calc(100vh - 120px);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .admin-card {
+            background: white;
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+            .admin-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            }
+
+        .admin-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.4rem;
+            margin-right: 15px;
+        }
+
+        .status-badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .status-active {
+            background: linear-gradient(135deg, var(--success), #27ae60);
+            color: white;
+        }
+
+        .status-inactive {
+            background: linear-gradient(135deg, var(--danger), #c0392b);
+            color: white;
+        }
+
+        .btn-modern {
+            border-radius: 10px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+            .btn-modern:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            }
+
+        .form-control-modern {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+            .form-control-modern:focus {
+                border-color: var(--secondary);
+                box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.1);
+            }
+
+        .section-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f8f9fa;
+        }
+
+        .stats-highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .admin-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .info-label {
+            font-size: 0.75rem;
+            color: #6c757d;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Clean Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="nav-brand">🧹 The Rock Waste Management</div>
+                <div class="user-menu">
+                    <div class="user-avatar">A</div>
+                    <span>Admin Portal</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-5 fw-bold mb-3">Admin Management</h1>
+                        <p class="lead mb-0 opacity-90">Manage system administrators and access permissions</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <div class="stats-highlight">
+                            <h3 class="mb-1">@Model.AdminUsers.Count</h3>
+                            <small class="opacity-90">Administrators</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success/Error Messages -->
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    <div class="flex-grow-1">@TempData["Success"]</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    <div class="flex-grow-1">@TempData["Error"]</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <!-- Add New Admin Form -->
+            <div class="form-container">
+                <h3 class="section-title">
+                    <i class="bi bi-person-plus me-2"></i>Add New Administrator
+                </h3>
+                <form method="post" action="/Admin/AddAdmin">
+                    <div class="row g-3">
+                        <div class="col-md-12 col-lg-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" class="form-control form-control-modern" name="NewAdminName" required
+                                   placeholder="Enter full name">
+                        </div>
+
+                        <div class="col-md-12 col-lg-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" class="form-control form-control-modern" name="NewAdminEmail" required
+                                   placeholder="Enter email address">
+                        </div>
+
+                        <div class="col-md-12 col-lg-2">
+                            <label class="form-label fw-semibold">Phone Number</label>
+                            <input type="tel" class="form-control form-control-modern" name="NewAdminPhone"
+                                   placeholder="Phone number">
+                        </div>
+
+                        <div class="col-md-12 col-lg-2">
+                            <label class="form-label fw-semibold">Password</label>
+                            <input type="text" class="form-control form-control-modern" name="NewAdminPassword"
+                                   placeholder="Auto-generate">
+                            <small class="form-text text-muted">Leave empty to auto-generate</small>
+                        </div>
+
+                        <div class="col-md-12 col-lg-2 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary btn-modern w-100 py-3">
+                                <i class="bi bi-person-add me-2"></i>Add Admin
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Admin Users List -->
+            <div class="form-container">
+                <h3 class="section-title">
+                    <i class="bi bi-people me-2"></i>Current Administrators
+                </h3>
+
+                @if (Model.AdminUsers.Any())
+                {
+                    <div class="row g-4">
+                        @foreach (var admin in Model.AdminUsers)
+                        {
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <div class="admin-card h-100">
+                                    <div class="p-4">
+                                        <!-- Admin Header -->
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="admin-avatar">
+                                                @admin.Name.Split(' ').Last().First().ToString().ToUpper()
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1 fw-bold">@admin.Name</h6>
+                                                <p class="text-muted mb-2 small">@admin.Email</p>
+                                                <span class="status-badge @(admin.Status == "active" ? "status-active" : "status-inactive")">
+                                                    @admin.Status.ToUpper()
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Admin Details -->
+                                        <div class="admin-info-grid">
+                                            <div class="info-item">
+                                                <div class="info-label">Phone</div>
+                                                <div class="info-value">@(string.IsNullOrEmpty(admin.Phone) ? "Not set" : admin.Phone)</div>
+                                            </div>
+                                            <div class="info-item">
+                                                <div class="info-label">Created</div>
+                                                <div class="info-value">@admin.CreatedAt.ToString("MMM dd, yyyy")</div>
+                                            </div>
+                                            <div class="info-item">
+                                                <div class="info-label">Last Login</div>
+                                                <div class="info-value">@(admin.LastLogin.HasValue? admin.LastLogin.Value.ToString("MMM dd, yyyy") : "Never")</div>
+                                            </div>
+                                            <div class="info-item">
+                                                <div class="info-label">Status</div>
+                                                <div class="info-value">@admin.Status</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Action Buttons -->
+                                        <div class="action-buttons mt-4 pt-3 border-top">
+                                            <form method="post" action="/Admin/ToggleAdminStatus" class="d-inline">
+                                                <input type="hidden" name="adminId" value="@admin.Id" />
+                                                <input type="hidden" name="currentStatus" value="@admin.Status" />
+                                                <button type="submit" class="btn btn-modern @(admin.Status == "active" ? "btn-warning" : "btn-success")">
+                                                    <i class="bi bi-@(admin.Status == "active" ? "pause" : "play")-circle me-1"></i>
+                                                    @(admin.Status == "active" ? "Deactivate" : "Activate")
+                                                </button>
+                                            </form>
+                                            <button class="btn btn-modern btn-outline-secondary">
+                                                <i class="bi bi-key me-1"></i>Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-5">
+                        <i class="bi bi-people display-1 text-muted mb-4"></i>
+                        <h4 class="text-muted mb-3">No Administrators Found</h4>
+                        <p class="text-muted">Add the first administrator using the form above.</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 The Rock Waste Management System</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-dismiss alerts after 5 seconds
+            setTimeout(() => {
+                const alerts = document.querySelectorAll('.alert');
+                alerts.forEach(alert => {
+                    const bsAlert = new bootstrap.Alert(alert);
+                    bsAlert.close();
+                });
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

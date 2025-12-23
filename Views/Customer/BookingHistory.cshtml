@@ -1,0 +1,140 @@
+﻿@model List<BookingViewModel>
+
+@{
+    ViewData["Title"] = "Booking History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="mt-4">My Booking History</h2>
+
+<!-- Toast Notification -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+        <div class="toast show align-items-center text-bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    @TempData["SuccessMessage"]
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model == null || Model.Count == 0)
+{
+    <div class="alert alert-info mt-3">No bookings found.</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Service</th>
+                    <th>Address</th>
+                    <th>Amount</th>
+                    <th>Payment Status</th>
+                    <th>Booking Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var booking in Model)
+                {
+                    <tr>
+                        <td>@booking.Date.ToString("dd MMM yyyy")</td>
+                        <td>
+                            <span class="badge bg-secondary">@booking.ServiceType</span>
+                        </td>
+                        <td>@booking.Address</td>
+                        <td class="fw-bold">
+                            @if (booking.FinalPrice > 0)
+                            {
+                                <text>R@(booking.FinalPrice.ToString("F2"))</text>
+                            }
+                            else
+                            {
+                                <text>Price pending</text>
+                            }
+                        </td>
+                        <td>
+                            <span class="badge bg-@GetPaymentStatusColor(booking.PaymentStatus)">
+                                @booking.PaymentStatus?.ToUpper()
+                            </span>
+                        </td>
+                        <td>
+                            <span class="badge bg-@GetStatusColor(booking.Status)">
+                                @booking.Status
+                            </span>
+                        </td>
+                        <td>
+                            @if (CanCancelBooking(booking.Status, booking.PaymentStatus))
+                            {
+                                <form asp-action="CancelBooking" asp-controller="Customer" method="post" onsubmit="return confirm('Are you sure you want to cancel this booking?');" class="d-inline">
+                                    <input type="hidden" name="bookingId" value="@booking.BookingId" />
+                                    <button type="submit" class="btn btn-sm btn-danger">
+                                        <i class="fa fa-times"></i> Cancel
+                                    </button>
+                                </form>
+                            }
+                            else if (booking.PaymentStatus == "paid")
+                            {
+                                <span class="badge bg-success">
+                                    <i class="fa fa-check"></i> Paid
+                                </span>
+                            }
+                            else if (booking.Status.ToLower() == "cancelled")
+                            {
+                                <span class="text-muted">Cancelled</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Awaiting Payment</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@functions {
+    public string GetStatusColor(string status)
+    {
+        return status.ToLower() switch
+        {
+            "approved" => "success",
+            "pending" => "warning",
+            "rejected" => "danger",
+            "cancelled" => "secondary",
+            "assigned" => "info",
+            _ => "light"
+        };
+    }
+
+    public string GetPaymentStatusColor(string paymentStatus)
+    {
+        return paymentStatus?.ToLower() switch
+        {
+            "paid" => "success",
+            "pending" => "warning",
+            "failed" => "danger",
+            _ => "secondary"
+        };
+    }
+
+    public bool CanCancelBooking(string status, string paymentStatus)
+    {
+        // Can cancel only if:
+        // 1. Booking is not already cancelled
+        // 2. Payment is not paid
+        // 3. Booking is in a cancellable state (pending, approved)
+        var cancellableStatuses = new[] { "pending", "approved" };
+        return cancellableStatuses.Contains(status.ToLower()) &&
+               paymentStatus?.ToLower() != "paid";
+    }
+}

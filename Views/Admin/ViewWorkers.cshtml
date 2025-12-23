@@ -1,0 +1,98 @@
+﻿@model List<WorkerModel>
+
+@{
+    ViewData["Title"] = "All Workers";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary">All Registered Workers</h2>
+        <a href="/Admin/AddWorker" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Add Worker
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var worker in Model)
+                            {
+                                <tr>
+                                    <td>@worker.Name</td>
+                                    <td>@worker.Phone</td>
+                                    <td>@worker.Email</td>
+                                    <td>
+                                        <span class="badge @(worker.IsActive ? "bg-success" : "bg-danger")">
+                                            @(worker.IsActive ? "Active" : "Inactive")
+                                        </span>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/Admin/EditWorker/@worker.Id" class="btn btn-sm btn-outline-primary me-1">
+                                            <i class="bi bi-pencil-square"></i> Edit
+                                        </a>
+
+                                        <!-- Status Toggle Form -->
+                                        <form method="post" action="/Admin/ToggleWorkerStatus" class="d-inline me-1">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="workerId" value="@worker.Id" />
+                                            <input type="hidden" name="isActive" value="@(!worker.IsActive)" />
+                                            <button type="submit" class="btn btn-sm @(worker.IsActive ? "btn-warning" : "btn-success")">
+                                                <i class="bi @(worker.IsActive ? "bi-pause-circle" : "bi-play-circle")"></i>
+                                                @(worker.IsActive ? "Deactivate" : "Activate")
+                                            </button>
+                                        </form>
+
+                                        <!-- Delete Form -->
+                                        <form method="post" action="/Admin/DeleteWorker" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="workerId" value="@worker.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Are you sure you want to delete @worker.Name?')">
+                                                <i class="bi bi-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning text-center">
+                    No workers found. Click <strong>"Add Worker"</strong> to get started.
+                </div>
+            }
+        </div>
+    </div>
+</div>

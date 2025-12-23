@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - The Rock Waste Management</title>
+    <!-- Using your existing layout styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c786c;
+            --secondary: #ff9800;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .register-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .register-left {
+            background: linear-gradient(to bottom right, var(--primary), #004445);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 50px;
+            color: var(--primary);
+        }
+
+        .register-right {
+            padding: 40px;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: var(--primary);
+                box-shadow: 0 0 0 0.25rem rgba(44, 120, 108, 0.25);
+            }
+
+        .input-group-text {
+            background: white;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: #235e54;
+                transform: translateY(-2px);
+            }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+            .feature-list li {
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+            }
+
+            .feature-list i {
+                background: rgba(255, 255, 255, 0.2);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+            }
+
+        .password-strength {
+            height: 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+            background: #eee;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+
+        .status-panel {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .status-item {
+            display: flex;
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .status-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 10px;
+        }
+
+        .status-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .status-error {
+            background: #dc3545;
+            color: white;
+        }
+
+        @@media (max-width: 768px) {
+            .register-left
+
+        {
+            padding: 30px 20px;
+        }
+
+        .register-right {
+            padding: 30px 20px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing navbar from layout will be here -->
+
+    <div class="container">
+        <div class="register-container">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <div class="register-left">
+                        <div class="logo">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h2>Join The Rock Waste Management</h2>
+                        <p>Efficient waste management solutions for a cleaner environment</p>
+
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Schedule pickups online</li>
+                            <li><i class="fas fa-check"></i> Get your dustbin and carpet cleaned</li>
+                            <li><i class="fas fa-check"></i> Fast</li>
+                            <li><i class="fas fa-check"></i> 24/7 Customer support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="register-right">
+                        <h3 class="mb-4">Create Account</h3>
+
+                        <form id="registerForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <div class="password-strength mt-2">
+                                    <div class="progress-bar" id="passwordStrength"></div>
+                                </div>
+                                <small class="form-text text-muted">Use at least 8 characters with a mix of letters, numbers & symbols</small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 mb-3" id="registerButton">
+                                <span class="spinner-border spinner-border-sm me-2" id="spinner" style="display: none;"></span>
+                                Create Account
+                            </button>
+
+                            <div class="alert alert-danger mt-3" id="errorMessage" style="display: none;"></div>
+                            <div class="alert alert-success mt-3" id="successMessage" style="display: none;"></div>
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Firebase App (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+
+    <!-- Firebase Auth (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+    <!-- Firebase Firestore (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Using the Firebase SDK from your layout -->
+    <!-- No additional Firebase SDKs loaded here to prevent conflicts -->
+
+    <script>
+        // Wait for the Firebase SDK from layout to load
+        // Wait for the Firebase SDK from layout to load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Firebase with your configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDlGF6Qp1-wsOabSMkDy-feJV3WtVtyROY",
+        authDomain: "therockwastemanagement.firebaseapp.com",
+        projectId: "therockwastemanagement",
+        storageBucket: "therockwastemanagement.appspot.com",
+        messagingSenderId: "612370591242",
+        appId: "1:612370591242:web:65d742fb6dc4c2ab5139f3"
+    };
+
+    // Initialize Firebase
+    try {
+        // Check if Firebase is already initialized
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        } else {
+            firebase.app(); // if already initialized, use that one
+        }
+        console.log("Firebase initialized successfully");
+        
+        // Check if firestore is available
+        if (typeof firebase.firestore === 'undefined') {
+            console.log("Firestore not loaded, loading dynamically...");
+            loadFirestore();
+        } else {
+            console.log("Firestore already available");
+            initializeFirestore();
+        }
+        
+    } catch (error) {
+        console.error("Firebase initialization error:", error);
+        document.getElementById('errorMessage').textContent = 'Firebase initialization error: ' + error.message;
+        document.getElementById('errorMessage').style.display = 'block';
+    }
+
+    // Rest of your existing code for password strength and form submission...
+    // Password strength indicator
+    document.getElementById('password').addEventListener('input', function() {
+        const password = this.value;
+        const strengthBar = document.getElementById('passwordStrength');
+        let strength = 0;
+
+        if (password.length >= 8) strength += 25;
+        if (/[A-Z]/.test(password)) strength += 25;
+        if (/[0-9]/.test(password)) strength += 25;
+        if (/[^A-Za-z0-9]/.test(password)) strength += 25;
+
+        strengthBar.style.width = strength + '%';
+
+        if (strength < 50) {
+            strengthBar.style.backgroundColor = '#dc3545';
+        } else if (strength < 75) {
+            strengthBar.style.backgroundColor = '#ffc107';
+        } else {
+            strengthBar.style.backgroundColor = '#28a745';
+        }
+    });
+
+    // Email availability check
+    document.getElementById('email').addEventListener('blur', async function() {
+        const email = this.value;
+        if (email && isValidEmail(email)) {
+            try {
+                const response = await fetch('/Auth/CheckEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email })
+                });
+                
+                const result = await response.json();
+                if (result.exists) {
+                    showError('This email is already registered. Please use a different email or login.');
+                }
+            } catch (error) {
+                console.error('Email check error:', error);
+            }
+        }
+    });
+
+    // Enhanced form submission
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const formData = {
+            firstName: document.getElementById('firstName').value.trim(),
+            lastName: document.getElementById('lastName').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            password: document.getElementById('password').value,
+            confirmPassword: document.getElementById('confirmPassword').value
+        };
+
+        // Validation
+        if (!validateForm(formData)) {
+            return;
+        }
+
+        await registerUser(formData);
+    });
+});
+
+// Enhanced registration function
+async function registerUser(data) {
+    const errorDiv = document.getElementById('errorMessage');
+    const successDiv = document.getElementById('successMessage');
+    const registerButton = document.getElementById('registerButton');
+    const spinner = document.getElementById('spinner');
+
+    errorDiv.style.display = 'none';
+    successDiv.style.display = 'none';
+
+    // Show loading state
+    registerButton.disabled = true;
+    spinner.style.display = 'inline-block';
+
+    try {
+        // Get auth instance
+        const auth = firebase.auth();
+        
+        // Create user with Firebase Authentication
+        const userCredential = await auth.createUserWithEmailAndPassword(data.email, data.password);
+        const user = userCredential.user;
+
+        console.log("User created in Firebase Auth:", user.uid);
+
+        // Send email verification
+        await user.sendEmailVerification();
+
+        // Check if Firestore is available
+        if (typeof firebase.firestore === 'undefined') {
+            throw new Error("Firestore not loaded. Please refresh the page.");
+        }
+
+        // Check if FieldValue is available
+        if (!firebase.firestore.FieldValue) {
+            throw new Error("Firestore FieldValue is not available.");
+        }
+
+        // Get Firestore instance
+        const db = firebase.firestore();
+
+        // Save additional user data to Firestore
+        await db.collection('users').doc(user.uid).set({
+            firstName: data.firstName,
+            lastName: data.lastName,
+            name: `${data.firstName} ${data.lastName}`,
+            email: data.email,
+            phone: data.phone,
+            role: 'customer',
+            status: 'active',
+            emailVerified: false,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            lastLogin: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        console.log("User data saved to Firestore");
+
+        // Store session in your ASP.NET backend
+        const sessionResponse = await fetch('/Auth/StoreSession', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                uid: user.uid,
+                email: data.email,
+                role: 'customer'
+            })
+        });
+
+        const sessionResult = await sessionResponse.json();
+        
+        if (sessionResult.success) {
+            successDiv.innerHTML = `
+                <h5>Registration Successful!</h5>
+                <p>We've sent a verification email to <strong>${data.email}</strong>.</p>
+                <p><strong>Please verify your email before logging in.</strong></p>
+                <p>Redirecting to customer dashboard...</p>
+            `;
+            successDiv.style.display = 'block';
+
+            // Redirect to customer dashboard after 3 seconds
+            setTimeout(() => {
+                window.location.href = '/Customer/Dashboard';
+            }, 3000);
+        } else {
+            throw new Error(sessionResult.message);
+        }
+
+    } catch (error) {
+        console.error('Registration error:', error);
+        
+        let errorMessage = error.message || 'Registration failed. Please try again.';
+        
+        // User-friendly error messages
+        if (error.code === 'auth/email-already-in-use') {
+            errorMessage = 'This email is already registered. Please use a different email or login.';
+        } else if (error.code === 'auth/weak-password') {
+            errorMessage = 'Password is too weak. Please use a stronger password.';
+        } else if (error.code === 'auth/invalid-email') {
+            errorMessage = 'Invalid email address. Please check your email format.';
+        } else if (error.code === 'auth/network-request-failed') {
+            errorMessage = 'Network error. Please check your internet connection.';
+        }
+        
+        showError(errorMessage);
+        
+        // Re-enable the button
+        registerButton.disabled = false;
+        spinner.style.display = 'none';
+    }
+}
+
+// Helper functions
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+    return emailRegex.test(email);
+}
+
+function showError(message) {
+    const errorDiv = document.getElementById('errorMessage');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+    
+    // Scroll to error
+    errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function validateForm(data) {
+    const errorDiv = document.getElementById('errorMessage');
+    
+    // Clear previous errors
+    errorDiv.style.display = 'none';
+
+    // Required fields
+    if (!data.firstName || !data.lastName || !data.email || !data.password) {
+        showError('All fields are required');
+        return false;
+    }
+
+    // Email format
+    if (!isValidEmail(data.email)) {
+        showError('Please enter a valid email address');
+        return false;
+    }
+
+    // Password match
+    if (data.password !== data.confirmPassword) {
+        showError('Passwords do not match');
+        return false;
+    }
+
+    // Password strength
+    if (data.password.length < 6) {
+        showError('Password must be at least 6 characters long');
+        return false;
+    }
+
+    return true;
+}
+
+// Load Firestore if not already available
+function loadFirestore() {
+    console.log("Loading Firestore dynamically...");
+    
+    const script = document.createElement('script');
+    script.src = 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js';
+    script.onload = function() {
+        console.log("Firestore loaded successfully");
+        initializeFirestore();
+    };
+    script.onerror = function() {
+        console.error("Failed to load Firestore");
+        document.getElementById('errorMessage').textContent = 'Failed to load Firestore. Please refresh the page.';
+        document.getElementById('errorMessage').style.display = 'block';
+    };
+    document.head.appendChild(script);
+}
+
+// Initialize Firestore
+function initializeFirestore() {
+    try {
+        console.log("Initializing Firestore...");
+        
+        // Check FieldValue
+        if (firebase.firestore.FieldValue) {
+            console.log("FieldValue is available");
+        } else {
+            console.error("FieldValue is not available");
+            document.getElementById('errorMessage').textContent = 'Firestore initialization error. Please refresh the page.';
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    } catch (error) {
+        console.error("Firestore initialization error:", error);
+        document.getElementById('errorMessage').textContent = 'Firestore initialization error: ' + error.message;
+        document.getElementById('errorMessage').style.display = 'block';
+    }
+}
+    </script>
+</body>
+</html>

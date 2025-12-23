@@ -1,0 +1,464 @@
+﻿@model TheRockWasteManagement.Models.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rock Waste Management Admin</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #17a2b8;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+
+            .nav-link:hover, .nav-link.active {
+                background: rgba(255,255,255,0.1);
+                color: white;
+            }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Main content */
+        .main-content {
+            padding: 20px;
+        }
+
+        /* Stat cards */
+        .stat-card {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+            .stat-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            }
+
+        /* Welcome header */
+        .welcome-header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Chart container */
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: 20px;
+        }
+
+        /* Activity list */
+        .activity-item {
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+            .activity-item:hover {
+                border-left-color: var(--secondary);
+                background-color: rgba(52, 152, 219, 0.05);
+            }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Responsive adjustments */
+       @@media (max-width: 992px) {
+            .nav-links
+
+        {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            flex-direction: column;
+            padding: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+        }
+
+        .user-menu span {
+            display: none;
+        }
+
+        
+
+       @@media (max-width: 768px) {
+            .welcome-header h2
+
+        {
+            font-size: 1.5rem;
+        }
+
+        .stat-card .display-5 {
+            font-size: 1.5rem !important;
+        }
+
+        }
+
+        /* Custom badge styles */
+        .badge-new {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        .badge-booking {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .badge-pending {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <div class="nav-brand">🧹 The Rock Waste Management</div>
+                    <button class="mobile-menu-btn ms-3" id="mobileMenuBtn">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+
+                <div class="nav-links" id="navLinks">
+                    <a class="nav-link active" href="#">
+                        <i class="bi bi-speedometer2 me-1"></i> Dashboard
+                    </a>
+                    <a class="nav-link" href="/Admin/ViewCustomers">
+                        <i class="bi bi-people-fill me-1"></i> Customers
+                    </a>
+                    <a class="nav-link" href="/Admin/ViewWorkers">
+                        <i class="bi bi-person-badge me-1"></i> Workers
+                    </a>
+                    <a class="nav-link" href="/Admin/AssignWorker">
+                        <i class="bi bi-person-plus me-1"></i> Assign Workers
+                    </a>
+                    <a class="nav-link" href="/Admin/ViewBookings">
+                        <i class="bi bi-calendar-check me-1"></i> Bookings
+                    </a>
+                    <a class="nav-link" href="/Admin/PaymentHistory">
+                        <i class="bi bi-cash-coin me-1"></i> Payments
+                    </a>
+                    <a class="nav-link" href="/Admin/ManageAdmins">
+                        <i class="bi bi-person-gear me-1"></i> Manage Admins
+                    </a>
+                </div>
+
+
+                <div class="user-menu">
+                    <div class="user-avatar">A</div>
+                    <span>Admin</span>
+                    <a class="nav-link text-danger ms-2" href="Logout">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="welcome-header">
+                <h2>Welcome Back, Admin!</h2>
+                <p class="mb-0">Monitor service performance, customer activity, and worker status in real-time.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-xl-3 col-md-6">
+                    <div class="stat-card card text-white border-0" style="background: linear-gradient(135deg, #007bff, #00c6ff);">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title">Total Customers</h6>
+                                    <h2 class="fw-bold">@Model.TotalCustomers</h2>
+                                </div>
+                                <i class="bi bi-people-fill display-5 opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="stat-card card text-white border-0" style="background: linear-gradient(135deg, #28a745, #a0e75a);">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title">Total Workers</h6>
+                                    <h2 class="fw-bold">@Model.TotalWorkers</h2>
+                                </div>
+                                <i class="bi bi-person-badge display-5 opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="stat-card card text-white border-0" style="background: linear-gradient(135deg, #ffc107, #ffdd59);">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title">Total Payments</h6>
+                                    <h2 class="fw-bold">R@(Model.TotalPayments.ToString("F2"))</h2>
+                                </div>
+                                <i class="bi bi-cash-coin display-5 opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="stat-card card text-white border-0" style="background: linear-gradient(135deg, #17a2b8, #71e4ef);">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title">Total Bookings</h6>
+                                    <h2 class="fw-bold">@Model.TotalBookings</h2>
+                                </div>
+                                <i class="bi bi-calendar-check display-5 opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container mt-4">
+                <h4 class="mb-4">Service Performance Overview</h4>
+                <canvas id="serviceChart" height="100"></canvas>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h5 class="mb-3">Booking Status</h5>
+                        <canvas id="bookingChart" height="200"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h5 class="mb-3">Recent Activity</h5>
+                        <ul class="list-group list-group-flush">
+                            @if (Model.RecentActivities != null && Model.RecentActivities.Any())
+                            {
+                                @foreach (var activity in Model.RecentActivities)
+                                {
+                                    <li class="list-group-item activity-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="badge badge-@(activity.Type?.ToLower() ?? "default") me-2">@activity.Type</span>
+                                                @activity.Description
+                                            </div>
+                                            <small class="text-muted">@activity.TimeAgo</small>
+                                        </div>
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                <li class="list-group-item activity-item">
+                                    <div class="text-center text-muted">
+                                        No recent activity
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+    <footer class="footer text-center">
+        <p class="mb-0">© 2025 The Rock Waste Management - Privacy</p>
+    </footer>
+
+            <script>
+                // Initialize charts with real data
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Service Trends Chart - Using real data
+                    const serviceCtx = document.getElementById('serviceChart');
+                    if (serviceCtx) {
+                        const serviceChart = new Chart(serviceCtx.getContext('2d'), {
+                            type: 'line',
+                            data: {
+                                labels: [@Html.Raw(Model.MonthlyPerformance != null ? string.Join(", ", Model.MonthlyPerformance.Select(m => $"\"{m.Month}\"")) : "")],
+                                datasets: [{
+                                    label: 'Bookings',
+                                    data: [@(Model.MonthlyPerformance != null ? string.Join(", ", Model.MonthlyPerformance.Select(m => m.Bookings)) : "0")],
+                                    borderColor: '#3498db',
+                                    tension: 0.3,
+                                    fill: true,
+                                    backgroundColor: 'rgba(52, 152, 219, 0.1)'
+                                }, {
+                                    label: 'Payments',
+                                    data: [@(Model.MonthlyPerformance != null ? string.Join(", ", Model.MonthlyPerformance.Select(m => m.Payments)) : "0")],
+                                    borderColor: '#2ecc71',
+                                    tension: 0.3,
+                                    fill: true,
+                                    backgroundColor: 'rgba(46, 204, 113, 0.1)'
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: {
+                                        display: false
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                                   // Booking Status Chart - Using real data
+                const bookingCtx = document.getElementById('bookingChart');
+                if (bookingCtx) {
+                    const bookingChart = new Chart(bookingCtx.getContext('2d'), {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Completed', 'Pending', 'Cancelled', 'In Progress', 'Reading BPS', 'Approved', 'Assigned', 'Rejected'],
+                            datasets: [{
+                                data: [
+                                    @Model.BookingStatus.Completed,
+                                    @Model.BookingStatus.Pending,
+                                    @Model.BookingStatus.Cancelled,
+                                    @Model.BookingStatus.InProgress,
+                                    @Model.BookingStatus.ReadingBPS,
+                                    @Model.BookingStatus.Approved,
+                                    @Model.BookingStatus.Assigned,
+                                    @Model.BookingStatus.Rejected
+                                ],
+                                backgroundColor: [
+                                    '#2ecc71', // Completed - Green
+                                    '#f39c12', // Pending - Orange
+                                    '#e74c3c', // Cancelled - Red
+                                    '#3498db', // In Progress - Blue
+                                    '#9b59b6', // Reading BPS - Purple
+                                    '#27ae60', // Approved - Dark Green
+                                    '#2980b9', // Assigned - Dark Blue
+                                    '#c0392b'  // Rejected - Dark Red
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }
+                    });
+                }
+
+                    // Mobile menu toggle
+                    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                    const navLinks = document.getElementById('navLinks');
+
+                    if (mobileMenuBtn && navLinks) {
+                        mobileMenuBtn.addEventListener('click', function() {
+                            navLinks.classList.toggle('show');
+                        });
+                    }
+                });
+            </script>
+</body>
+</html>

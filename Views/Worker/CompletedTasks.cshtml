@@ -1,0 +1,404 @@
+﻿@model List<TheRockWasteManagement.Models.BookingModel>
+@{
+    ViewBag.Title = "Completed Tasks";
+    Layout = "~/Views/Shared/_WorkerLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Tasks - The Rock Waste Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c786c;
+            --secondary: #ff9800;
+            --success: #28a745;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--success), #20c997);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--success);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .task-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--success);
+            transition: all 0.3s ease;
+        }
+
+            .task-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            }
+
+        .status-badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .action-btn {
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-weight: 600;
+        }
+
+        .nav-tabs .nav-link.active {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+
+        .back-to-active-btn {
+            background: linear-gradient(135deg, var(--primary), #004445);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .back-to-active-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(44, 120, 108, 0.3);
+            }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+
+        .completion-date {
+            background: #e8f5e8;
+            color: #155724;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-5 fw-bold mb-2">Completed Tasks</h1>
+                    <p class="lead mb-0">Task History for <strong>@ViewBag.WorkerEmail</strong></p>
+                    <p class="mb-0">Review your completed cleaning assignments</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="stat-card text-white" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-check-circle fa-2x mb-2"></i>
+                        <h3 class="mb-1">@Model.Count</h3>
+                        <p class="mb-0">Total Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-tabs nav-justified" id="dashboardTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="@Url.Action("Dashboard", "Worker")" role="tab">
+                            <i class="fas fa-list-check me-2"></i>Active Tasks
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab" aria-controls="completed" aria-selected="true">
+                            <i class="fas fa-check-circle me-2"></i>Completed Tasks
+                            <span class="badge bg-success ms-2">@Model.Count</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="row quick-stats mb-4">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: var(--success);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>@Model.Count</h3>
+                    <p class="text-muted mb-0">Total Completed</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: var(--info);">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>@Model.Count(b => b.CompletedAt.Date == DateTime.Today)</h3>
+                    <p class="text-muted mb-0">Completed Today</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: var(--primary);">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h3>@Model.Count(b => b.CompletedAt.Date >= DateTime.Today.AddDays(-7))</h3>
+                    <p class="text-muted mb-0">This Week</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: var(--secondary);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>@Model.Count(b => b.CompletedAt.Month == DateTime.Now.Month)</h3>
+                    <p class="text-muted mb-0">This Month</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h3 class="fw-bold text-success mb-0">
+                            <i class="fas fa-history me-2"></i>Your Completed Tasks History
+                        </h3>
+                        <p class="text-muted mb-0 mt-1">
+                            <i class="fas fa-info-circle me-1"></i>
+                            All tasks that have been completed and approved by admin
+                        </p>
+                    </div>
+                    <div>
+                        <a href="@Url.Action("Dashboard", "Worker")" class="btn back-to-active-btn me-2">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Active Tasks
+                        </a>
+                        <button class="btn btn-outline-success btn-sm" onclick="location.reload()">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Tasks Section -->
+        <div class="row">
+            <div class="col-12">
+                @if (Model.Count == 0)
+                {
+                    <div class="empty-state">
+                        <i class="fas fa-check-circle fa-4x text-muted mb-3"></i>
+                        <h4 class="text-muted">No Completed Tasks Yet</h4>
+                        <p class="text-muted">You haven't completed any tasks that have been approved by admin.</p>
+                        <p class="text-muted">Complete your active tasks and once approved by admin, they will appear here.</p>
+                        <a href="@Url.Action("Dashboard", "Worker")" class="btn back-to-active-btn mt-3">
+                            <i class="fas fa-list-check me-2"></i>View Active Tasks
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        @foreach (var task in Model.OrderByDescending(t => t.CompletedAt))
+                        {
+                            <div class="col-lg-6 col-xl-4 mb-4">
+                                <div class="task-card">
+                                    <!-- Task Header -->
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <span class="status-badge status-completed">
+                                            <i class="fas fa-check-circle me-1"></i>
+                                            COMPLETED
+                                        </span>
+                                        <div class="completion-date">
+                                            <i class="fas fa-calendar-check me-1"></i>
+                                            @task.CompletedAt.ToString("MMM dd, yyyy")
+                                        </div>
+                                    </div>
+
+                                    <!-- Task ID -->
+                                    <div class="mb-3">
+                                        <small class="text-muted">Task #@task.BookingId.Substring(0, 8)</small>
+                                    </div>
+
+                                    <!-- Customer Info -->
+                                    <div class="mb-3">
+                                        <h6 class="fw-bold text-success mb-2">
+                                            <i class="fas fa-user me-2"></i>Customer
+                                        </h6>
+                                        <p class="mb-0 fw-semibold">@task.CustomerName</p>
+                                    </div>
+
+                                    <!-- Service Details -->
+                                    <div class="mb-3">
+                                        <h6 class="fw-bold text-success mb-2">
+                                            <i class="fas fa-broom me-2"></i>Service
+                                        </h6>
+                                        <p class="mb-0">@task.ServiceType Cleaning</p>
+                                        <small class="text-muted">@task.Address</small>
+                                    </div>
+
+                                    <!-- Task Timeline -->
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <h6 class="fw-bold text-success mb-2">
+                                                <i class="fas fa-calendar me-2"></i>Scheduled
+                                            </h6>
+                                            <p class="mb-0">@task.BookingDate.ToString("MMM dd, yyyy")</p>
+                                            <small class="text-muted">@task.TimeSlot</small>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="fw-bold text-success mb-2">
+                                                <i class="fas fa-flag-checkered me-2"></i>Completed
+                                            </h6>
+                                            <p class="mb-0">@task.CompletedAt.ToString("MMM dd, yyyy")</p>
+                                            <small class="text-muted">@task.CompletedAt.ToString("hh:mm tt")</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- Completion Timeline -->
+                                    <div class="mb-3">
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mt-1">
+                                            <small class="text-muted">Assigned</small>
+                                            <small class="text-muted">Completed</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick Actions -->
+                                    <div class="mt-3">
+                                        <div class="btn-group w-100">
+                                            <button class="btn btn-outline-success btn-sm" onclick="showDirections('@task.Address')">
+                                                <i class="fas fa-directions"></i> Directions
+                                            </button>
+                                            <button class="btn btn-outline-info btn-sm" onclick="viewTaskDetails('@task.BookingId')">
+                                                <i class="fas fa-eye"></i> Details
+                                            </button>
+                                            <button class="btn btn-outline-primary btn-sm" onclick="contactSupport()">
+                                                <i class="fas fa-headset"></i> Support
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Completion Badge -->
+                                    <div class="text-center mt-3">
+                                        <span class="badge bg-light text-success border border-success">
+                                            <i class="fas fa-award me-1"></i>
+                                            Successfully Completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Summary Section -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">
+                                        <i class="fas fa-chart-line me-2"></i>Performance Summary
+                                    </h5>
+                                    <div class="row text-center">
+                                        <div class="col-md-3">
+                                            <h4 class="text-success">@Model.Count</h4>
+                                            <small class="text-muted">Total Completed</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h4 class="text-primary">@Model.GroupBy(t => t.CompletedAt.Date).Count()</h4>
+                                            <small class="text-muted">Working Days</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h4 class="text-info">@Model.GroupBy(t => t.CustomerName).Count()</h4>
+                                            <small class="text-muted">Unique Customers</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h4 class="text-warning">@Model.GroupBy(t => t.ServiceType).Count()</h4>
+                                            <small class="text-muted">Service Types</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Auto-refresh every 5 minutes
+        setInterval(() => {
+            location.reload();
+        }, 300000); // 5 minutes
+
+        function showDirections(address) {
+            const encodedAddress = encodeURIComponent(address);
+            window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, '_blank');
+        }
+
+        function viewTaskDetails(bookingId) {
+            alert(`Task Details for #${bookingId}\n\nThis feature would show detailed information about the completed task.`);
+        }
+
+        function contactSupport() {
+            alert('Contact Support\n\nPhone: (123) 456-7890\nEmail: support@rockwastemanagement.com\n\nOur support team is available 24/7 to assist you.');
+        }
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to task cards when they come into view
+            const taskCards = document.querySelectorAll('.task-card');
+            taskCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('animate__animated', 'animate__fadeInUp');
+            });
+        });
+    </script>
+
+    <!-- Add Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</body>
+</html>
