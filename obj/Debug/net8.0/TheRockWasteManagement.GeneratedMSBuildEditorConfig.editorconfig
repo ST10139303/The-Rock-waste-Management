@@ -1,0 +1,129 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TheRockWasteManagement
+build_property.RootNamespace = TheRockWasteManagement
+build_property.ProjectDir = C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/AddWorker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkV29ya2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/AssignWorker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQXNzaWduV29ya2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/EditWorker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFdvcmtlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/ManageAdmins.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQWRtaW5zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/PaymentHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGF5bWVudEhpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/ViewBookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld0Jvb2tpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/ViewCustomers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld0N1c3RvbWVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Admin/ViewWorkers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld1dvcmtlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Customer/BookCleaning.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQm9va0NsZWFuaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Customer/BookingHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQm9va2luZ0hpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Customer/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Customer/MakePayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcTWFrZVBheW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Shared/_WorkerLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Xb3JrZXJMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Worker/CompletedTasks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2VyXENvbXBsZXRlZFRhc2tzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Worker/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2VyXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Worker/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2VyXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RC_Student_Lab/Desktop/TheRockWasteManagement/TheRockWasteManagement/TheRockWasteManagement/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9fo1wfhad8

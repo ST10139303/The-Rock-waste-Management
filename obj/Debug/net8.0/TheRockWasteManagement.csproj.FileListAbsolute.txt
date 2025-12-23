@@ -1,0 +1,261 @@
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.staticwebassets.runtime.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.staticwebassets.endpoints.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.exe
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.deps.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.runtimeconfig.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\FirebaseAdmin.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Grpc.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.V1.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Location.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.LongRunning.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Auth.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MailKit.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MimeKit.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Linq.Async.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Management.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.AssemblyReference.cache
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfoInputs.cache
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfo.cs
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.CoreCompileInputs.cache
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cache
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cs
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\bundle\TheRockWasteManagement.styles.css
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\projectbundle\TheRockWasteManagement.bundle.scp.css
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.TheRockWasteManagement.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.TheRockWasteManagement.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.build.TheRockWasteManagement.props
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TheRockWasteManagement.props
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TheRockWasteManagement.props
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockW.98B2A7CC.Up2Date
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\refint\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.genruntimeconfig.cache
+C:\Users\RC_Student_lab\source\repos\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\ref\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.staticwebassets.runtime.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.exe
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.deps.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.runtimeconfig.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\FirebaseAdmin.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Grpc.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.V1.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Location.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.LongRunning.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Auth.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MailKit.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MimeKit.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Linq.Async.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Management.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.AssemblyReference.cache
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfoInputs.cache
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfo.cs
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.CoreCompileInputs.cache
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cache
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cs
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.TheRockWasteManagement.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.build.TheRockWasteManagement.props
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TheRockWasteManagement.props
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TheRockWasteManagement.props
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\bundle\TheRockWasteManagement.styles.css
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\projectbundle\TheRockWasteManagement.bundle.scp.css
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.CopyComplete
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\refint\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.genruntimeconfig.cache
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\ref\TheRockWasteManagement.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Keys\serviceAccountKey.json
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Storage.v1.dll
+C:\Users\RC_Student_lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Storage.V1.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Keys\serviceAccountKey.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.staticwebassets.runtime.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.staticwebassets.endpoints.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.exe
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.deps.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.runtimeconfig.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\FirebaseAdmin.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Grpc.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Storage.v1.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.V1.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Location.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Storage.V1.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.LongRunning.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Auth.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MailKit.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MimeKit.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Linq.Async.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Management.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.AssemblyReference.cache
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfoInputs.cache
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfo.cs
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.CoreCompileInputs.cache
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cache
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cs
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\bundle\TheRockWasteManagement.styles.css
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\projectbundle\TheRockWasteManagement.bundle.scp.css
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockW.98B2A7CC.Up2Date
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\refint\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.genruntimeconfig.cache
+C:\Users\RC_Student_Lab\OneDrive - ADvTECH Ltd\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\ref\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Keys\serviceAccountKey.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.staticwebassets.endpoints.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.staticwebassets.runtime.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.exe
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.deps.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.runtimeconfig.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\FirebaseAdmin.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Grpc.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Apis.Storage.v1.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Firestore.V1.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Location.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Cloud.Storage.V1.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.LongRunning.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Auth.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MailKit.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\MimeKit.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Linq.Async.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Management.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.AssemblyReference.cache
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfoInputs.cache
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.AssemblyInfo.cs
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.csproj.CoreCompileInputs.cache
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cache
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.RazorAssemblyInfo.cs
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\bundle\TheRockWasteManagement.styles.css
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\scopedcss\projectbundle\TheRockWasteManagement.bundle.scp.css
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockW.98B2A7CC.Up2Date
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\refint\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.pdb
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.genruntimeconfig.cache
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\ref\TheRockWasteManagement.dll
+C:\Users\RC_Student_Lab\Desktop\TheRockWasteManagement\TheRockWasteManagement\TheRockWasteManagement\obj\Debug\net8.0\TheRockWasteManagement.sourcelink.json
